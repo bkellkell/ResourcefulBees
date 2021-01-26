@@ -66,6 +66,9 @@ public class CustomBeeModel<T extends CustomBeeEntity> extends AgeableModel<T> {
             case MUSHROOM:
                 addMushrooms();
                 break;
+			case BUNNY:
+			    addBunnyEars();
+				break;
             case DEFAULT:
                 addDefaultParts();
         }
@@ -365,6 +368,24 @@ public class CustomBeeModel<T extends CustomBeeEntity> extends AgeableModel<T> {
         backMushroom1.addChild(backMushroom2);
         setRotationAngle(backMushroom2, 0.0F, -1.5708F, 0.0F);
         backMushroom2.setTextureOffset(0, 48).addCuboid(-8.0F, -14.0F, -2.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
+
+    private void addBunnyEars() {
+        ModelRenderer ears = new ModelRenderer(this);
+        ears.setRotationPoint(0.0F, 5.0F, 0.0F);
+        body.addChild(ears);
+        
+
+        ModelRenderer leftEar = new ModelRenderer(this);
+        leftEar.setRotationPoint(1.75F, -11.5F, -2.5F);
+        ears.addChild(leftEar);
+        setRotationAngle(leftEar, 0.0F, 0.3927F, 0.0F);
+        leftEar.setTextureOffset(58, 24).addCuboid(-0.5F, -2.5F, -1.5F, 2.0F, 5.0F, 1.0F, 0.0F, false);
+
+        ModelRenderer rightEar = new ModelRenderer(this);
+        rightEar.setRotationPoint(-1.75F, -11.5F, -2.5F);
+        ears.addChild(rightEar);
+        setRotationAngle(rightEar, 0.0F, -0.3927F, 0.0F);
+        rightEar.setTextureOffset(58, 33).addCuboid(-1.5F, -2.5F, -1.5F, 2.0F, 5.0F, 1.0F, 0.0F, false);
     }
 
     public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -30,6 +30,9 @@ public class BaseBeeModel extends EntityModel<Entity> {
 	private final ModelRenderer frontMushroom2;
 	private final ModelRenderer backMushroom1;
 	private final ModelRenderer backMushroom2;
+	private final ModelRenderer ears;
+	private final ModelRenderer leftEar;
+	private final ModelRenderer rightEar;
 
 	public BaseBeeModel() {
 		textureWidth = 64;
@@ -186,6 +189,22 @@ public class BaseBeeModel extends EntityModel<Entity> {
 		backMushroom1.addChild(backMushroom2);
 		setRotationAngle(backMushroom2, 0.0F, -1.5708F, 0.0F);
 		backMushroom2.setTextureOffset(0, 48).addBox(-8.0F, -14.0F, -2.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
+		ears = new ModelRenderer(this);
+		ears.setRotationPoint(0.0F, 5.0F, 0.0F);
+		body.addChild(ears);
+		
+
+		leftEar = new ModelRenderer(this);
+		leftEar.setRotationPoint(1.75F, -11.5F, -2.5F);
+		ears.addChild(leftEar);
+		setRotationAngle(leftEar, 0.0F, 0.3927F, 0.0F);
+		leftEar.setTextureOffset(58, 24).addBox(-0.5F, -2.5F, -1.5F, 2.0F, 5.0F, 1.0F, 0.0F, false);
+
+		rightEar = new ModelRenderer(this);
+		rightEar.setRotationPoint(-1.75F, -11.5F, -2.5F);
+		ears.addChild(rightEar);
+		setRotationAngle(rightEar, 0.0F, -0.3927F, 0.0F);
+		rightEar.setTextureOffset(58, 33).addBox(-1.5F, -2.5F, -1.5F, 2.0F, 5.0F, 1.0F, 0.0F, false);
 	}
 
 	@Override
