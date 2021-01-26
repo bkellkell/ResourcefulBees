@@ -25,6 +25,11 @@ public class BaseBeeModel extends EntityModel<Entity> {
 	private final ModelRenderer gel;
 	private final ModelRenderer queen;
 	private final ModelRenderer nose;
+	private final ModelRenderer mushroom;
+	private final ModelRenderer frontMushroom1;
+	private final ModelRenderer frontMushroom2;
+	private final ModelRenderer backMushroom1;
+	private final ModelRenderer backMushroom2;
 
 	public BaseBeeModel() {
 		textureWidth = 64;
@@ -153,6 +158,34 @@ public class BaseBeeModel extends EntityModel<Entity> {
 		nose.setRotationPoint(0.0F, -21.0F, 0.0F);
 		body.addChild(nose);
 		nose.setTextureOffset(26, 25).addBox(-1.0F, 21.0F, -6.5F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+
+		mushroom = new ModelRenderer(this);
+		mushroom.setRotationPoint(0.0F, 0.0F, 0.0F);
+		body.addChild(mushroom);
+		mushroom.setTextureOffset(0, 25).addBox(-3.5F, -4.0F, -5.0F, 7.0F, 7.0F, 10.0F, 0.4F, false);
+
+		frontMushroom1 = new ModelRenderer(this);
+		frontMushroom1.setRotationPoint(-1.5F, -4.0F, 0.0F);
+		mushroom.addChild(frontMushroom1);
+		frontMushroom1.setTextureOffset(32, 48).addBox(-8.0F, -14.0F, -4.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
+
+		frontMushroom2 = new ModelRenderer(this);
+		frontMushroom2.setRotationPoint(0.0F, 0.0F, -2.0F);
+		frontMushroom1.addChild(frontMushroom2);
+		setRotationAngle(frontMushroom2, 0.0F, -1.5708F, 0.0F);
+		frontMushroom2.setTextureOffset(32, 48).addBox(-8.0F, -14.0F, -2.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
+
+		backMushroom1 = new ModelRenderer(this);
+		backMushroom1.setRotationPoint(2.5F, -4.0F, 4.0F);
+		mushroom.addChild(backMushroom1);
+		setRotationAngle(backMushroom1, 0.0F, -0.7854F, 0.0F);
+		backMushroom1.setTextureOffset(0, 48).addBox(-8.0F, -14.0F, -2.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
+
+		backMushroom2 = new ModelRenderer(this);
+		backMushroom2.setRotationPoint(0.0F, 0.0F, 0.0F);
+		backMushroom1.addChild(backMushroom2);
+		setRotationAngle(backMushroom2, 0.0F, -1.5708F, 0.0F);
+		backMushroom2.setTextureOffset(0, 48).addBox(-8.0F, -14.0F, -2.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
 	}
 
 	@Override
