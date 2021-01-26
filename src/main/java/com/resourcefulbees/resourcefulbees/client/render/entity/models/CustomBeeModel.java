@@ -368,6 +368,7 @@ public class CustomBeeModel<T extends CustomBeeEntity> extends AgeableModel<T> {
         backMushroom1.addChild(backMushroom2);
         setRotationAngle(backMushroom2, 0.0F, -1.5708F, 0.0F);
         backMushroom2.setTextureOffset(0, 48).addCuboid(-8.0F, -14.0F, -2.0F, 16.0F, 16.0F, 0.0F, -2.0F, false);
+	}
 
     private void addBunnyEars() {
         ModelRenderer ears = new ModelRenderer(this);
