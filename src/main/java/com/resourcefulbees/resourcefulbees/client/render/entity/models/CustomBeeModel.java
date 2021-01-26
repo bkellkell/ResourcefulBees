@@ -66,9 +66,9 @@ public class CustomBeeModel<T extends CustomBeeEntity> extends AgeableModel<T> {
             case MUSHROOM:
                 addMushrooms();
                 break;
-			case BUNNY:
-			    addBunnyEars();
-				break;
+            case BUNNY:
+                addBunnyEars();
+                break;
             case DEFAULT:
                 addDefaultParts();
         }
